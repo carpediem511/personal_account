@@ -1,3 +1,71 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+	--bg: #361d4d;
+	--bg-content: #581C87;
+	--basicText: #fffffd;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/*палитра:
+темно-фио (фон) #451877 и фио #8949c1
+белый (текст) #fffffd
+бирюза () #b6e1f1 и #95dfea
+темно-серый #8284b4
+светло-серый #d0cce5*/
+body {
+	background-color: var(--bg);
+	color: var(--basicText)
+}
+
+.content {
+	background-color: var(--bg-content);
+	max-width: 1240px;
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 50px;
+	padding-right: 50px;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+@media (max-width: 1480px) {
+	.content {
+		width: 1280px;
+	}
+}
+
+@media (max-width: 1280px) {
+	.content {
+		width: 1024px;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.content {
+		width: 768px;
+	}
+}
+
+@media (max-width: 768px) {
+	.content {
+		width: 640px;
+	}
+}
+
+@media (max-width: 640px) {
+	.content {
+		width: 475px;
+	}
+}

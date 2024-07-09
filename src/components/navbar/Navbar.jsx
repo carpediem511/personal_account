@@ -1,12 +1,11 @@
+import Image from "next/image"
 import Links from "./links/Links"
 
 const Navbar = () => {
 	return (
-		<div>
-			<div>Logo</div>
-			<div>
-				<Links />
-			</div>
+		<div className="flex align-middle items-center justify-between">
+			<Image src='/logo-site.png' width={100} height={100} />
+			<Links />
 		</div>
 	)
 }
