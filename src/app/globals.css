@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 :root {
 	--bg: #361d4d;
@@ -21,6 +22,7 @@
 темно-серый #8284b4
 светло-серый #d0cce5*/
 body {
+	font-family: 'Lora', serif;
 	background-color: var(--bg);
 	color: var(--basicText)
 }
