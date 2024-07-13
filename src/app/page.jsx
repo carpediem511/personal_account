@@ -1,61 +1,28 @@
-'use client'
-
-import styles from '@/app/styles.module.css'
-import { useState } from 'react';
-
-const slides = [
-	{
-		title: 'Не бойся перемен! Они и есть жизнь!',
-		path: '/bridge.jpg',
-	},
-	{
-		title: 'Создавай жизнь своей мечты!',
-		path: '/carnival.jpg',
-	},
-	{
-		title: 'Всё в своей жизни выбирай по любви!',
-		path: '/cars.jpg',
-	},
-	{
-		title: 'Внутри тебя есть сила. Она ведёт тебя к мечте.',
-		path: '/children.jpg',
-	},
-	{
-		title: 'Будь для себя той любовью и заботой, которую ты так ищешь.',
-		path: '/pineapple.jpg',
-	},
-	{
-		title: 'Путешествуйте! Деньги возвращаются, а время - никогда!..',
-		path: '/took.jpg',
-	},
-]
+import Link from "next/link";
 
 export default function Home() {
 
-	const [activeSlide, setActiveSlide] = useState(0)
-
-	const handleSlideClick = (index) => {
-		setActiveSlide(index)
-	}
-
 	return (
-		<div className="flex flex-col w-full">
-			<h1 className='text-center py-6 text-3xl'>'имя', добро пожаловать в "Momentum" - Ваш цифровой помощник для управления жизнью</h1>
-
-			<h2 className={styles.additionalFont}>Все важные данные, развлечения и возможности под рукой!</h2>
-			<div className={styles.slideContainer}>
-				{slides.map((slide, index) => (
-
-					<div
-						key={index}
-						className={`${styles.slide} ${activeSlide === index ? styles.active : ''}`}
-						onClick={() => handleSlideClick(index)}
-						style={{ backgroundImage: `url(${slide.path})` }}
-					>
-						<h3>{slide.title}</h3>
-					</div>
-				))}
+		<section className="bg-center bg-cover bg-no-repeat bg-[url('/hero.jpg')] bg-gray-500 bg-blend-multiply">
+			<div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+				<h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+					'имя', добро пожаловать в "Momentum"
+				</h1>
+				<p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+					Ваш цифровой помощник для управления жизнью. Управляйте финансами, планируйте дела, делитесь мыслями и наслаждайтесь любимыми развлечениями – все в одном месте.
+				</p>
+				<div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+					<Link href="#" className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:ring-sky-300">
+						Начинаем
+						<svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+						</svg>
+					</Link>
+					<Link href="/about" className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400">
+						Узнать больше
+					</Link>
+				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
