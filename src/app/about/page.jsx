@@ -6,27 +6,27 @@ import { useState } from 'react';
 const slides = [
 	{
 		title: 'Не бойся перемен! Они и есть жизнь!',
-		path: '/bridge.jpg',
+		path: '/images/bridge.jpg',
 	},
 	{
 		title: 'Создавай жизнь своей мечты!',
-		path: '/carnival.jpg',
+		path: '/images/carnival.jpg',
 	},
 	{
 		title: 'Всё в своей жизни выбирай по любви!',
-		path: '/cars.jpg',
+		path: '/images/cars.jpg',
 	},
 	{
 		title: 'Внутри тебя есть сила. Она ведёт тебя к мечте.',
-		path: '/children.jpg',
+		path: '/images/children.jpg',
 	},
 	{
 		title: 'Будь для себя той любовью и заботой, которую ты так ищешь.',
-		path: '/pineapple.jpg',
+		path: '/images/pineapple.jpg',
 	},
 	{
 		title: 'Путешествуйте! Деньги возвращаются, а время - никогда!..',
-		path: '/took.jpg',
+		path: '/images/took.jpg',
 	},
 ]
 

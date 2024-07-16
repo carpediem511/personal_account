@@ -71,3 +71,9 @@ body {
 		width: 475px;
 	}
 }
+
+@media (max-width: 475px) {
+	.content {
+		width: 380px;
+	}
+}
