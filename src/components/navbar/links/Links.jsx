@@ -1,43 +1,27 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import NavLink from "./navLink/navLink"
 import Image from "next/image"
 
 const links = [
-	{
-		title: "Домой",
-		path: "/",
-	},
-
-	{
-		title: "О сервисе",
-		path: "/about",
-	},
-
-	{
-		title: "Лента",
-		path: "/blog",
-	},
-
-	{
-		title: "Играть",
-		path: "/game",
-	},
-
-	{
-		title: "Медиа",
-		path: "/media",
-	},
+	{ title: "Домой", path: "/" },
+	{ title: "О сервисе", path: "/about" },
+	{ title: "Лента", path: "/blog" },
+	{ title: "Играть", path: "/game" },
+	{ title: "Медиа", path: "/media" },
 ]
-
-
 
 const Links = () => {
 	const [openMenu, setOpenMenu] = useState(false);
+	const [isClient, setIsClient] = useState(false);
 
-	let session = true;
-	let isAdmin = true;
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
+
+	const session = true;
+	const isAdmin = true;
 
 	return (
 		<div>
@@ -66,7 +50,7 @@ const Links = () => {
 				onClick={() => setOpenMenu((prev) => !prev)}
 			/>
 
-			{openMenu && (
+			{isClient && openMenu && (
 				<div className="absolute top-24 right-0 w-1/2 h-max bg-purple-900 flex flex-col items-center justify-center gap-3">
 					{links.map((link) => (
 						<NavLink item={link} key={link.title} />

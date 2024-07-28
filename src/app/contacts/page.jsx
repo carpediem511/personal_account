@@ -1,4 +1,5 @@
 const Contacts = () => {
+	console.log('it works')
 	return (
 		<>
 			<section className="py-6 dark:bg-gray-100 dark:text-gray-900">

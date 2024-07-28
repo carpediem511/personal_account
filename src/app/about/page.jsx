@@ -1,7 +1,7 @@
 'use client'
 
 import styles from '@/app/about/styles.module.css'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const slides = [
 	{
@@ -32,7 +32,12 @@ const slides = [
 
 const AboutPage = () => {
 
-	const [activeSlide, setActiveSlide] = useState(0)
+	const [activeSlide, setActiveSlide] = useState(-1)
+
+	useEffect(() => {
+		// Устанавливаем активный слайд после того, как компонент смонтирован на клиенте
+		setActiveSlide(0)
+	}, [])
 
 	const handleSlideClick = (index) => {
 		setActiveSlide(index)
