@@ -6,7 +6,7 @@ const PostCard = () => {
 		<div>
 			<article className="flex flex-col bg-gray-50 shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30">
 				<div className="flex justify-center">
-					<Image src='/postImg1.jpg' alt="my_photo" width={250} height={450} className="object-contain bg-gray-500" />
+					<Image src='/images/postImg1.jpg' alt="my_photo" width={250} height={450} className="object-contain bg-gray-500" />
 				</div>
 				<div className="flex flex-col flex-1 p-6">
 					<h3 className="flex-1 py-2 text-lg font-semibold leading-snug">Te nulla oportere reprimique his dolorum</h3>
