@@ -9,7 +9,7 @@ const SinglePostPage = () => {
 						width={250}
 						height={450}
 						className="object-cover rounded-t-lg lg:rounded-l-lg lg:rounded-r-none shadow-lg sm:h-96"
-						src="/postImg1.jpg"
+						src="/images/postImg1.jpg"
 						alt="my_photo"
 					/>
 				</div>
