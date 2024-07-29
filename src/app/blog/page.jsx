@@ -1,6 +1,7 @@
 import PostCard from "@/components/postCard/PostCard"
+import { getPosts } from "../../../lib/data"
 
-const getData = async () => {
+/*const getData = async () => {
 	const response = await fetch('https://642ee23f2b883abc64198889.mockapi.io/poems')
 
 	if (!response.ok) {
@@ -8,11 +9,11 @@ const getData = async () => {
 	}
 
 	return response.json()
-}
+}*/
 
 const BlogPage = async () => {
 
-	const posts = await getData()
+	const posts = await getPosts()
 
 	return (
 		<section className="py-6 sm:py-12 bg-gray-100 text-gray-800">
@@ -25,7 +26,6 @@ const BlogPage = async () => {
 					{posts.map((post) => (
 						<PostCard post={post} key={post.id} />
 					))}
-
 				</div>
 			</div>
 		</section>
