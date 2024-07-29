@@ -5,19 +5,20 @@ const PostCard = ({ post }) => {
 	return (
 		<div className="max-w-md flex mx-auto my-8">
 			<article className="flex flex-col bg-gray-50 shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl">
-				<div className="flex justify-center p-4">
+				<div className="flex justify-center p-4 h-96 overflow-hidden">
 					<Image
-						src='/images/postImg1.jpg'
+						src={`/images/postImg${post.id}.jpg`}
 						alt="my_photo"
 						width={250}
-						height={450}
-						className="object-contain bg-gray-500"
+						height={400}
+						className="object-contain"
 					/>
 				</div>
 				<div className="p-4 flex-grow">
 					<div className="h-16 flex items-center justify-center mb-4">
 						<h3 className="text-center text-lg font-semibold gap-10 leading-snug">{post.title}</h3>
 					</div>
+					<span className="text-md mb-2 text-gray-600 font-caveat">{post.author}</span>
 					<div className="flex justify-between text-xs text-gray-600 mb-4">
 						<span>{post.date}</span>
 						<span>Просмотры: {post.views} раз(а)</span>
