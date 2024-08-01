@@ -24,7 +24,7 @@ const SinglePostPage = async ({ params }) => {
 						width={250}
 						height={450}
 						className="object-cover rounded-t-lg lg:rounded-l-lg lg:rounded-r-none shadow-lg sm:h-96"
-						src={`/images/postImg${post.id}.jpg`}
+						src={`/images/postImg${post.poemID}.jpg`}
 						alt="my_photo"
 					/>
 				</div>

@@ -7,7 +7,7 @@ const PostCard = ({ post }) => {
 			<article className="flex flex-col bg-gray-50 shadow-lg transition-shadow duration-300 ease-in-out hover:shadow-xl">
 				<div className="flex justify-center p-4 h-96 overflow-hidden">
 					<Image
-						src={`/images/postImg${post.id}.jpg`}
+						src={`/images/postImg${post.poemID}.jpg`}
 						alt="my_photo"
 						width={250}
 						height={400}
