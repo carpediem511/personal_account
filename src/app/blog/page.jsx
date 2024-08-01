@@ -24,7 +24,7 @@ const BlogPage = async () => {
 				</div>
 				<div className="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
 					{posts.map((post) => (
-						<PostCard post={post} key={post.id} />
+						<PostCard post={post} key={post.poemID} />
 					))}
 				</div>
 			</div>

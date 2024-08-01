@@ -26,7 +26,7 @@ const PostCard = ({ post }) => {
 					</div>
 				</div>
 				<div className="text-center flex justify-center items-end py-4">
-					<Link href={`/blog/${post.id}`}>
+					<Link href={`/blog/${post.poemID}`}>
 						<p className="text-gray-600 underline">Открыть пост</p>
 					</Link>
 				</div>
