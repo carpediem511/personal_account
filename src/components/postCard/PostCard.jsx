@@ -11,6 +11,7 @@ const PostCard = ({ post }) => {
 						alt="my_photo"
 						width={250}
 						height={400}
+						priority
 						className="object-contain"
 					/>
 				</div>

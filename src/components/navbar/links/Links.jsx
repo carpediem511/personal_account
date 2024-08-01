@@ -46,6 +46,7 @@ const Links = () => {
 				alt="menu icon"
 				width={30}
 				height={30}
+				priority
 				className="flex cursor-pointer md:hidden"
 				onClick={() => setOpenMenu((prev) => !prev)}
 			/>
