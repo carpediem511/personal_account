@@ -11,6 +11,17 @@ import { getPost } from "../../../../lib/data"
 	return response.json()
 }*/
 
+export const generateMetadata = async ({ params }) => {
+
+	const { slug } = params
+	const post = await getPost(slug)
+
+	return {
+		title: post.title,
+		description: post.text,
+	}
+};
+
 const SinglePostPage = async ({ params }) => {
 
 	const { slug } = params
