@@ -1,16 +1,6 @@
 import Image from "next/image"
 import { getPost } from "../../../../lib/data"
 
-/*const getData = async (slug) => {
-	const response = await fetch(`https://642ee23f2b883abc64198889.mockapi.io/poems/${slug}`)
-
-	if (!response.ok) {
-		throw new Error('Something went wrong')
-	}
-
-	return response.json()
-}*/
-
 export const generateMetadata = async ({ params }) => {
 
 	const { slug } = params
@@ -20,12 +10,21 @@ export const generateMetadata = async ({ params }) => {
 		title: post.title,
 		description: post.text,
 	}
-};
+}
+
+const getData = async (slug) => {
+	const response = await fetch(`http://localhost:3000/api/blog/${slug}`)
+
+	if (!response.ok) {
+		throw new Error('Something went wrong')
+	}
+	return response.json()
+}
 
 const SinglePostPage = async ({ params }) => {
 
 	const { slug } = params
-	const post = await getPost(slug)
+	const post = await getData(slug)
 
 	return (
 		<div className="p-8 bg-[rgba(0,0,0,0.3)] rounded-2xl mx-auto max-w-screen-xl lg:p-12">

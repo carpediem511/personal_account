@@ -1,26 +1,24 @@
 import PostCard from "@/components/postCard/PostCard"
 import { getPosts } from "../../../lib/data"
-import NewPostCard from "@/components/newPostCard/NewPostCard";
-
-/*const getData = async () => {
-	const response = await fetch('https://642ee23f2b883abc64198889.mockapi.io/poems')
-
-	if (!response.ok) {
-		throw new Error('Something went wrong')
-	}
-
-	return response.json()
-}*/
+import NewPostCard from "@/components/newPostCard/NewPostCard"
 
 export const metadata = {
 	title: "Лента стихов",
 	description: "Здесь вы можете добавлять и делиться своими любимыми стихотворениями. Откройте для себя разнообразие поэзии, от классических произведений до современных стихов, и внесите свои любимые стихи в наш сборник. Вдохновляйтесь, находите новые произведения и делитесь своими находками с другими любителями поэзии. Погружайтесь в мир стихотворений и создавайте свою личную коллекцию.",
 };
 
+const getData = async () => {
+	const response = await fetch('http://localhost:3000/api/blog', { next: { revalidate: 3600 } })
+	if (!response.ok) {
+		throw new Error('Something went wrong')
+	}
+	return response.json()
+}
+
 
 const BlogPage = async () => {
 
-	const posts = await getPosts()
+	const posts = await getData()
 
 	return (
 		<>
