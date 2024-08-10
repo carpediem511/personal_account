@@ -1,6 +1,7 @@
-import { handleGithubLogin, login } from "../../../../lib/action"
+import LoginForm from "@/components/loginForm/loginForm"
+import { handleGithubLogin } from "../../../../lib/action"
 
-const LoginPage = async () => {
+const LoginPage = () => {
 
 	return (
 		<>
@@ -13,13 +14,7 @@ const LoginPage = async () => {
 				</button>
 			</form>
 
-			<form action={login}>
-				<input type="text" placeholder="username" name="username" />
-				<input type="password" placeholder="password" name="password" />
-				<button>
-					Войти как пользователь
-				</button>
-			</form>
+			<LoginForm />
 		</>
 	)
 }
