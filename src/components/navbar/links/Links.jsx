@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import NavLink from "./navLink/navLink"
 import Image from "next/image"
+import { handleLogout } from "../../../../lib/action"
+import { auth } from "../../../../lib/auth"
 
 const links = [
 	{ title: "Домой", path: "/" },
@@ -12,7 +14,7 @@ const links = [
 	{ title: "Медиа", path: "/media" },
 ]
 
-const Links = () => {
+const Links = ({ session }) => {
 	const [openMenu, setOpenMenu] = useState(false);
 	const [isClient, setIsClient] = useState(false);
 
@@ -20,7 +22,6 @@ const Links = () => {
 		setIsClient(true);
 	}, []);
 
-	const session = true;
 	const isAdmin = true;
 
 	return (
@@ -30,12 +31,14 @@ const Links = () => {
 					<NavLink item={link} key={link.title} />
 				))}
 
-				{session ? (
+				{session?.user ? (
 					<>
-						{isAdmin && <NavLink item={{ title: 'Администратор', path: '/admin' }} />}
-						<button className="p-2.5 cursor-pointer font-bold rounded-xl bg-purple-800">
-							Выйти
-						</button>
+						{session.user?.isAdmin && <NavLink item={{ title: 'Администратор', path: '/admin' }} />}
+						<form action={handleLogout}>
+							<button className="p-2.5 cursor-pointer font-bold rounded-xl bg-purple-800">
+								Выйти
+							</button>
+						</form>
 					</>
 				) : (
 					<NavLink item={{ title: 'Войти', path: '/login' }} />
