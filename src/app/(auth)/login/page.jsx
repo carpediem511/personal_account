@@ -6,14 +6,6 @@ const LoginPage = () => {
 
 	return (
 		<>
-			{/*	<form action={handleGithubLogin}>
-				<button
-					type="submit"
-					className="w-full text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
-				>
-					Войти через GitHub
-				</button>
-			</form>*/}
 			<div className="w-full px-4 py-20 mx-auto bg-[#451877] xl:py-32 md:w-3/5 lg:w-4/5 xl:w-3/5">
 				<form action={handleGithubLogin}>
 					<h1 className="mb-4 -mt-3 text-2xl text-center leading-snug tracking-tight text-[#fffffd] md:text-4xl font-caveat">
@@ -38,7 +30,6 @@ const LoginPage = () => {
 				</form>
 				<LoginForm />
 			</div>
-
 		</>
 	)
 }
